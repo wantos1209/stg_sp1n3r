@@ -1,0 +1,281 @@
+@font-face {
+    font-family: myFont;
+    src: url(font/Hanson-Bold.ttf);
+}
+
+:root {
+    --primary-rgba: 40, 40, 40;
+    --second-rgba: 227, 12, 66;
+    --primary-color: #ffffff;
+    --box-shadow: 0 0 15px #ffffffa1;
+    --container-bg: linear-gradient(to top, #4b53f3, #9834ff);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+*::-webkit-scrollbar {
+    width: 5px;
+}
+*::-webkit-scrollbar-track {
+    background-color: rgba(var(--second-rgba), 0.3);
+}
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(var(--second-rgba));
+    border-radius: 6px;
+}
+*::-webkit-scrollbar-thumb:hover {
+    background-color: var(--second-rgba);
+}
+a {
+    text-decoration: none;
+    width: 100%;
+    color: rgb(255 255 255 / 82%);
+    transition: all 0.3s ease;
+}
+a:hover {
+    color: white;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.76);
+    z-index: -1;
+}
+body {
+    background: url(img/bendera-indonesia.gif);
+    background-size: cover;
+    background-position: center;
+    color: rgb(255 255 255 / 82%);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: relative;
+    scroll-behavior: smooth;
+}
+section {
+    background: url(img/BG_PEMILUHOMELOGIN.png);
+    background-size: cover;
+    background-position: top;
+    box-shadow: var(--box-shadow);
+    margin: auto;
+    width: 100%;
+    height: 100vh;
+    max-width: 425px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.judulpemilus {
+    width: 100%;
+}
+.infoevent {
+    width: 90%;
+    background: #D9D9D9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+    gap: 10px ;
+    box-shadow: 0 0 0 5px #ea3f50, 0 0 10px #0000006b;
+}
+.infoevent p {
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: myFont;
+    text-shadow: 2px 2px 2px #f43232, 1px 1px 1px #000000;
+    line-height: 20px;
+    color: white;
+}
+.infoevent span {
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+    padding-top: 5px;
+    border-top: 0.5px solid #0000002b;
+    color: #0000009e;
+}
+.pushdownload {
+    margin-top: 10px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    width: 90%;
+    background: linear-gradient(to top, #1dcd05, #7df905);
+    box-shadow: 0 5px 10px #0000003d, inset 0 0 10px #b4ff6b;
+    font-family: myFont;
+    letter-spacing: 0.5px;
+    font-size: 15px;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.pushdownload:hover {
+    filter: brightness(1.5);
+    color: black;
+    box-shadow: 0 5px 10px #0000003d, 0 0 10px #7df905;
+    transform: scale(1.05);
+}
+.showdulu {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background: #000000d5;
+    padding: 10%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.menudown {
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    top: 25%;
+    animation: showmeplease 1s;
+}
+.menudown .logoweb {
+    width: 150px;
+}
+.jiksbutton {
+    width: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 13px;
+    padding: 10px;
+    background: white;
+    box-shadow: 0 5px 5px #000000af;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+@keyframes showmeplease {
+    0% {
+        opacity: 0;
+        top: 35%;
+    }
+    100% {
+        opacity: 1;
+        top: 25%;
+    }
+}
+.jiksbutton:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 8px #0000007a, 0 0 10px white;
+}
+.jiksbutton span {
+    color: #0000009c;
+}
+.title-btn {
+    font-size: 16px;
+    color: black;
+    font-weight: 700;
+}
+
+label {
+    font-family: myFont;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.397);
+}
+.downloaddulu {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    position: relative;
+    top: -50px;
+    animation: asepmuncul 1s;
+}
+@keyframes asepmuncul {
+    0% {
+        opacity: 0;
+        top: -100px;
+    }
+    100% {
+        opacity: 1;
+        top: -50px;
+    }
+}
+.downloaddulu select {
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-family: myFont;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding: 5px;
+}
+.downloaddulu option {
+    text-align: center;
+}
+.closedulu {
+    position: absolute;
+    bottom: 0;
+    padding: 3px 5px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-size: 12px;
+    font-weight: 900;
+    cursor: pointer;
+    background: #fcff8f;
+    transition: all 0.3s ease;
+    animation: iis 1s;
+}
+@keyframes iis {
+    0% {
+        bottom: -100px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .infoevent p {
+        font-size: 13px;
+        line-height: 15px;
+    }
+    body {
+        background: rgba(0, 0, 0, 0.76);
+    }
+    .infoevent span {
+        font-size: 9px;
+    }
+}
+@media screen and (max-width: 340px) {
+    .infoevent p {
+        font-size: 11px;
+    }
+    .infoevent span {
+        font-size: 8px;
+    }
+}

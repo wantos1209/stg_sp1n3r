@@ -1,0 +1,853 @@
+@font-face {
+    font-family: myFont;
+    src: url(font/Evogria.otf);
+}
+@font-face {
+    font-family: inteGral;
+    src: url(font/Demo_Fonts/Fontspring-DEMO-integralcf-regular.otf);
+}
+@font-face {
+    font-family: geOf;
+    src: url(font/go3v2.ttf);
+}
+@font-face {
+    font-family: kaUsan;
+    src: url(font/KaushanScript-Regular.ttf);
+}
+
+:root {
+    --primary-rgba: 40, 40, 40;
+    --second-rgba: 227, 12, 66;
+    --primary-color: #ffffff;
+    --box-shadow: 0 0 15px #f64735;
+    --container-bg: linear-gradient(to top, #4b53f3, #9834ff);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+*::-webkit-scrollbar {
+    width: 5px;
+}
+*::-webkit-scrollbar-track {
+    background-color: rgba(var(--second-rgba), 0.3);
+}
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(var(--second-rgba));
+    border-radius: 6px;
+}
+*::-webkit-scrollbar-thumb:hover {
+    background-color: var(--second-rgba);
+}
+a {
+    text-decoration: none;
+    width: 100%;
+    color: rgb(255 255 255 / 82%);
+    transition: all 0.3s ease;
+}
+a:hover {
+    color: white;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.493);
+    z-index: -1;
+}
+body {
+    background: url(img/background-l21.gif);
+    background-size: cover;
+    background-position: center;
+    color: rgb(255 255 255 / 82%);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: relative;
+    scroll-behavior: smooth;
+}
+section {
+    background: url(img/BG_IMLEK_BEFORE_LOGIN.png);
+    background-size: cover;
+    background-position: top;
+    box-shadow: var(--box-shadow);
+    margin: auto;
+    width: 100%;
+    height: 100vh;
+    max-width: 425px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+.judulpemilus {
+    width: 100%;
+    margin-top: 30px;
+}
+.infoevent {
+    width: 90%;
+    background: linear-gradient(270deg, #ce1c24 -22%, #761113 24%,#761113 75%, #ce1c24 122%);
+    box-shadow: 0 5px 5px #0000003d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 3px;
+    position: relative;
+    z-index: 2;
+}
+.infoevent img{
+    width: 50px;
+    position: absolute;
+}
+.infoevent .fm1 {
+    top: 0;
+    left: 0;
+    transform: rotateZ(270deg);
+    filter: drop-shadow(1px 2px 2px black);
+}
+.infoevent .fm2 {
+    top: 0;
+    right: 0;
+    filter: drop-shadow(-1px 2px 2px black);
+}
+.infoevent .fm3 {
+    bottom: 0;
+    left: 0;
+    transform: rotateZ(180deg);
+    filter: drop-shadow(-1px -2px 2px black);
+}
+.infoevent .fm4 {
+    bottom: 0;
+    right: 0;
+    transform: rotateZ(90deg);
+    filter: drop-shadow(-1px -2px 2px black);
+}
+.infoevent p {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    color: white;
+}
+.pushdownload {
+    margin-top: 10px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    width: 90%;
+    background: linear-gradient(to top, #1dcd05, #7df905);
+    box-shadow: 0 5px 10px #0000003d, inset 0 0 10px #b4ff6b;
+    font-family: geOf;
+    letter-spacing: 0.5px;
+    font-size: 25px;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    cursor: pointer;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+.pushdownload:hover {
+    filter: brightness(1.5);
+    color: black;
+    box-shadow: 0 5px 10px #0000003d, 0 0 10px #7df905;
+    transform: scale(1.05);
+}
+.showdulu {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background: #000000d5;
+    padding: 10%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+}
+.menudown {
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    top: 25%;
+    animation: showmeplease 1s;
+}
+.menudown .logoweb {
+    width: 150px;
+}
+.jiksbutton {
+    width: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 13px;
+    padding: 10px;
+    background: white;
+    box-shadow: 0 5px 5px #000000af;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+@keyframes showmeplease {
+    0% {
+        opacity: 0;
+        top: 35%;
+    }
+    100% {
+        opacity: 1;
+        top: 25%;
+    }
+}
+.jiksbutton:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 8px #0000007a, 0 0 10px white;
+}
+.jiksbutton span {
+    color: #0000009c;
+}
+.title-btn {
+    font-size: 16px;
+    color: black;
+    font-weight: 700;
+}
+
+label {
+    font-family: geOf;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 25px;
+    text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.397);
+}
+.downloaddulu {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    position: relative;
+    top: -50px;
+    animation: asepmuncul 1s;
+}
+@keyframes asepmuncul {
+    0% {
+        opacity: 0;
+        top: -100px;
+    }
+    100% {
+        opacity: 1;
+        top: -50px;
+    }
+}
+.downloaddulu select {
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-family: myFont;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding: 5px;
+}
+.downloaddulu option {
+    text-align: center;
+}
+.closedulu {
+    position: absolute;
+    bottom: 0;
+    padding: 3px 5px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    text-transform: capitalize;
+    font-family: geOf;
+    letter-spacing: 1px;
+    font-size: 12px;
+    font-weight: 900;
+    cursor: pointer;
+    background: #fcff8f;
+    transition: all 0.3s ease;
+    animation: iis 1s;
+}
+@keyframes iis {
+    0% {
+        bottom: -100px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+.gmbbawah {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+.groupuser {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 30px;
+    z-index: 5;
+    position: relative;
+}
+.groupuser label {
+    font-family: geOf;
+    text-transform: uppercase;
+    font-size: 25px;
+    margin-bottom: 5px;
+    color: white;
+    text-shadow: 0 0 2px #e92e2e, 0 2px 2px black;
+}
+.groupuser form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.groupuser input {
+    width: 100%;
+    outline: none;
+    background: linear-gradient(to top, #b32436, #e52639);
+    padding: 5px;
+    text-align: center;
+    font-family: 'myFont';
+    color: white;
+    text-transform: uppercase;
+    font-size: 17px;
+    border: 1px solid #ce6222;
+    box-shadow: inset 2px 3px 5px #00000066;
+    transition: all 0.3s ease;
+}
+.groupuser input:focus {
+    box-shadow: inset 1px 2px 2px #00000066;
+    border: 1px solid #eeff00ce;
+}
+.continput {
+    width: 100%;
+    padding: 2px;
+    background: #b32436;
+    border-radius: 3px;
+    border: 2px double #ce6222;
+    display: flex;
+    box-shadow: 0 5px 5px #00000045, 0 -1px 2px #eeff00ea;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.continput.btnsubmit {
+    width: 40%;
+}
+.continput.btnsubmit:hover {
+    background: #f1cf00;
+    box-shadow: 0 8px 8px #00000045, 0 -1px 2px #eeff00ea, 0 0px 10px #eeff00;
+    transform: scale(1.1);
+}
+.continput.btnsubmit:hover button {
+    color: black;
+}
+.btnsubmit button {
+    width: 100%;
+    outline: none;
+    border: none;
+    background: transparent;
+    text-transform: uppercase;
+    color: white;
+    font-family: geOf;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.veriuser {
+    position: absolute;
+    bottom: 5%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    z-index: 2;
+}
+.veriuser p {
+    text-transform: uppercase;
+    font-family: myFont;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+}
+.continput.username {
+    width: 220px;
+    border-radius: 0;
+    background: linear-gradient(to top, #b52537, #dc263a);
+    box-shadow: 0 0px 5px #ffffff8c;
+    border: 1px double #ffffff8c;
+}
+.continput.buttonacak {
+    width: 220px;
+    margin-top: 15px;
+    padding: 5px;
+    background: linear-gradient(to top, #cf9b4e, #fcf38f);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: scaleup 0.8s linear infinite;
+}
+.continput.buttonacak:hover {
+    animation: none;
+    transform: scale(1.05);
+    filter: brightness(1.5);
+    box-shadow: 0 8px 8px #00000045, 0 0px 10px #eeff00ea;
+}
+@keyframes scaleup {
+    0% {
+        transform: scale(1);
+        filter: brightness(1);
+        box-shadow: 0 5px 5px #00000045, 0 -1px 2px #eeff00ea;
+    }
+    50% {
+        transform: scale(1.05);
+        filter: brightness(1.5);
+        box-shadow: 0 8px 8px #00000045, 0 0px 10px #eeff00ea;
+    }
+    100% {
+        transform: scale(1);
+        filter: brightness(1);
+        box-shadow: 0 5px 5px #00000045, 0 -1px 2px #eeff00ea;
+    }
+}
+.buttonacak button {
+    background: transparent;
+    width: 100%;
+    text-align: center;
+    outline: none;
+    border: none;
+    text-transform: uppercase;
+    font-family: geOf;
+    color: #b22436;
+    text-shadow: 1px 1px 1px #000000fc;
+    font-weight: 900;
+    font-size: 25px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.misterybox {
+    width: 400px;
+    height: 400px;
+    background: url(img/asset_imlek2024_amplop_randomize_BG.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    bottom: 24%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.groupbox {
+    width: 210px;
+    height: 200px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    z-index: 10;
+    justify-items: center;
+    align-items: center;
+    margin-top: 10px;
+    gap: 40px 30px;
+    position: relative;
+}
+.forelist {
+    position: absolute;
+    width: 50px;
+}
+.listbox {
+    width: 100%;
+    height: 65px;
+    background: url(img/open_amplop_0.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    box-shadow: 0px 3px 3px #00000096;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.listbox:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 8px 8px #00000096, 0 0 20px white;
+}
+.tutupamplop {
+    width: 100%;
+    position: absolute;
+    top: -33px;
+    transform: rotateX(0deg);
+}
+@keyframes flipclose {
+    0% {
+        transform: rotateX(0deg);
+        top: -33px;
+    }
+    100% {
+        transform: rotateX(180deg);
+        top: -1px;
+    }
+}
+@keyframes flipopen {
+    0% {
+        transform: rotateX(180deg);
+        top: -1px;
+    }
+    100% {
+        transform: rotateX(0deg);
+        top: -33px;
+    }
+}
+.isihadiah {
+    width: 100%;
+    height: 45px;
+    position: absolute;
+    top: -45px;
+    display: flex;
+    overflow: hidden;
+}
+.isihadiah img {
+    position: absolute;
+    width: 100%;
+    background: linear-gradient(to top, #cf9b4e, #fcf38f);
+    bottom: 0px;
+}
+@keyframes hideheigh {
+    0% {
+        bottom: 0;
+    }
+    100% {
+        bottom: -50px;
+    }
+}
+@keyframes showheigh {
+    0% {
+        bottom: -50px;
+    }
+    100% {
+        bottom: 0px;
+    }
+}
+.hadiahhd {
+    width: 70px;
+    text-align: center;
+    color: #43ff16;
+    text-shadow: 3px 3px 3px #000000b8;
+    font-family: myFont;
+    font-size: 15px;
+    font-weight: 900;
+    position: absolute;
+    left: -9px;
+    top: -35px;
+    transform: rotateZ(345deg);
+}
+@keyframes popsme {
+    0% {
+        transform: rotateZ(345deg) scale(0.3);
+    }
+    25% {
+        transform: rotateZ(345deg) scale(1.3);
+    }
+    50% {
+        transform: rotateZ(345deg) scale(0.8);
+    }
+    75% {
+        transform: rotateZ(345deg) scale(1);
+    }
+    100% {
+        transform: rotateZ(345deg) scale(0);
+    }
+}
+@keyframes gosme {
+    0% {
+        transform: rotateZ(345deg) scale(0);
+    }
+    50% {
+        transform: rotateZ(345deg) scale(1.1);
+    }
+    100% {
+        transform: rotateZ(345deg) scale(1);
+    }
+}
+.custom-swal-button {
+    background: linear-gradient(45deg, #3a010f, red) !important;
+    box-shadow: 0 5px 5px #0000005e !important;
+    transition: all 0.3s ease !important;
+}
+.custom-swal-button:hover {
+    box-shadow: 0 7px 7px #0000005e !important;
+    filter: brightness(1.5);
+    transform: scale(1.1);
+}
+.custom-swal-icon .swal2-success-ring {
+    border: 0.25em solid #ff00008a !important;
+}
+.swal2-icon.swal2-success.custom-swal-icon [class^=swal2-success-line] {
+    background-color: #ff0000 !important;
+    color: #ff00008a;
+}
+.animate-listbox {
+    transition: transform 0.5s ease;
+}
+.popuphasilinvo {
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    background: #000000d9;
+    z-index: 99;
+}
+.grouppop {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    animation: popupis 0.5s;
+}
+.grouppop img {
+    width: 100%;
+}
+@keyframes popupis {
+    0% {
+        transform: scale(0.3);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    75% {
+        transform: scale(0.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.closeinfo {
+    position: absolute;
+    top: -30px;
+    right: 30px;
+    background: white;
+    color: black;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5px;
+    border-radius: 50%;
+    box-shadow: 0px 5px 5px #0000009c;
+    z-index: 3;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.closeinfo:hover {
+    background: yellow;
+    transform: scale(1.1);
+}
+.hadiahnya {
+    font-size: 48px;
+    font-family: 'geOf';
+    position: absolute;
+    bottom: 13%;
+    color: #43ff16;
+    animation: fadefadein 1s linear infinite;
+}
+@keyframes fadefadein {
+    0% {
+        transform: scale(1);
+        text-shadow: 0 2px 2px black, 0 0 0px #43ff16;
+    }
+    50% {
+        transform: scale(1.05);
+        text-shadow: 0 2px 2px black, 0 0 10px #43ff16;
+    }
+    100% {
+        transform: scale(1);
+        text-shadow: 0 2px 2px black, 0 0 0px #43ff16;
+    }
+}
+.kontakadmin {
+    margin-top: 10px;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    gap: 3px;
+}
+.kontakadmin a {
+    width: 100%;
+    text-align: center;
+    padding: 8px;
+    box-shadow: 0 0 1px 1px rgb(0 0 0 / 30%), inset 0 1px rgb(255 255 255 / 30%), 0px 5px 5px #00000075;
+    font-family: 'geOf';
+    font-size: 20px;
+    text-shadow: 1px 1px 1px black;
+    transition: all 0.3s ease;
+}
+.kontakadmin a:hover {
+    filter: brightness(1.5);
+}
+.kontakadmin .whatsapp {
+    background: linear-gradient(to right, #55b909, #0b0b0b);
+    border-radius: 6px 0 0 6px;
+}
+.kontakadmin .livechat {
+    background: linear-gradient(to left, #fbb03b, #0b0b0b);
+    border-radius: 0 6px 6px 0;
+}
+.coinaktif {
+    text-align: center;
+    width: 70px;
+    position: absolute;
+    bottom: 1%;
+    right: 2%;
+    background: linear-gradient(to top, #cf9b4e, #fcf38f);
+    border-radius: 6px;
+    padding: 3px;
+    font-family: 'geOf';
+    color: black;
+    font-size: 15px;
+    box-shadow: 0 8px 8px #00000042;
+}
+.silahkanpilih {
+    display: none;
+    font-family: 'geOf';
+    position: absolute;
+    bottom: 7%;
+    z-index: 10;
+    font-size: 19px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    text-shadow: 3px 5px 5px rgba(0, 0, 0, 0.541);
+    animation: uncul 0.8s, cerahdulu 1s linear infinite;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+#loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #b22436;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes uncul {
+    0% {
+        transform: scale(0);
+        bottom: 0%;
+    }
+    50% {
+        transform: scale(1.15);
+        bottom: 7%;
+    }
+    100% {
+        transform: scale(0.8);
+        bottom: 7%;
+    }
+    100% {
+        transform: scale(1);
+        bottom: 7%;
+    }
+}
+@keyframes cerahdulu {
+    0% {
+        transform: scale(1);
+        text-shadow: 3px 5px 5px rgba(0, 0, 0, 0.541), 0 0 0 white;
+    }
+    50% {
+        transform: scale(1.1);
+        text-shadow: 3px 8px 8px rgba(0, 0, 0, 0.322), 0 0 5px white;
+    }
+    100% {
+        transform: scale(1);
+        text-shadow: 3px 5px 5px rgba(0, 0, 0, 0.541), 0 0 0 white;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    body {
+        background: unset;
+    }
+
+    .coinaktif {
+        width: 50px;
+        font-size: 12px;
+    }
+    .infoevent p {
+        font-size: 11px;
+        line-height: 15px;
+    }
+    body {
+        background: rgba(0, 0, 0, 0.76);
+    }
+    .judulpemilus {
+        margin-top: 10px;
+    }
+    .groupuser {
+        margin-top: 0px;
+    }
+    .gmbbawah {
+        opacity: 0.5;
+    }
+    .misterybox {
+        width: 330px;
+        height: 330px;
+    }
+}
+@media screen and (max-width: 340px) {
+    body {
+        background: unset;
+    }
+    
+    .infoevent p {
+        font-size: 8px;
+    }
+    .infoevent span {
+        font-size: 8px;
+    }
+}
