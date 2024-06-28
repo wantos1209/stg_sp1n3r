@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\VoucherController;
 use App\Http\Controllers\PemiluController;
 use App\Http\Controllers\ImlekController;
+use App\Http\Controllers\NewYearController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -144,8 +145,5 @@ Route::get('/getDataHadiah', [ImlekController::class, 'getDataHadiah']);
 Route::post('/postDataHadiah', [ImlekController::class, 'postDataHadiah']);
 
 /* Front NewYear */
-Route::get('/l21newyear/{jenis_event}/{website}/{androidid}/{ip?}', [NewYearController::class, 'l21newyear']);
-Route::post('/l21newyear', [NewYearController::class, 'l21newyear_store']);
-Route::put('/l21newyear', [NewYearController::class, 'l21newyear_update']);
-Route::get('/getDataHadiah', [NewYearController::class, 'getDataHadiah']);
-Route::post('/postDataHadiah', [NewYearController::class, 'postDataHadiah']);
+Route::get('/l21newyear/{jenis_event}/{website}/{deviceid}', [NewYearController::class, 'l21newyear']);
+Route::get('/l21newyear/cek/{jenis_event}/{website}/{deviceid}/{username}', [NewYearController::class, 'l21newyear_update']);

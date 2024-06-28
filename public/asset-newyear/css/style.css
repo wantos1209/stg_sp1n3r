@@ -1,0 +1,847 @@
+    /* Ganti 'path/to/ArcadeClassic.ttf' dengan path yang benar menuju file font Arcade Classic. */
+    /* @font-face {
+    font-family: 'ArcadeClassic';
+    src: url('path/to/ArcadeClassic.ttf') format('truetype');
+
+} */
+
+    /* canvas {
+    font-family: 'ArcadeClassic', sans-serif;
+} */
+
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+        /* Background color added for visibility */
+        position: relative;
+        overflow: hidden;
+    }
+
+
+    body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("../img/background-99.png");
+        /* Replace with your image URL */
+        /* background-size: cover; */
+        background-position: center;
+        filter: blur(10px);
+        /* Adjust the blur intensity */
+        z-index: 1;
+    }
+
+    @media screen and (max-width: 734px) {
+        body::before {
+            display: none;
+        }
+    }
+
+    .container {
+        max-width: 600px;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        background: linear-gradient(to right, #630119, #630119);
+    }
+
+
+
+
+    .img_bwh {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+
+        transform: translateX(-50%);
+        width: 100%;
+    }
+
+    .img_bwh img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+
+    .img_ats {
+        position: absolute;
+        top: 0;
+        left: 50%;
+
+        transform: translateX(-50%);
+        width: 100%;
+    }
+
+    .img_ats img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+
+    .container img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    *,
+    :after,
+    :before {
+        box-sizing: border-box
+    }
+
+    .pull-left {
+        float: left
+    }
+
+    .pull-right {
+        float: right
+    }
+
+    .clearfix:after,
+    .clearfix:before {
+        content: '';
+        display: table
+    }
+
+    .clearfix:after {
+        clear: both;
+        display: block
+    }
+
+
+
+    .scratch-wrap {
+        top: 42%;
+        width: 580px;
+        margin: auto;
+        /* Membuat elemen berada di tengah secara horizontal */
+        height: 100px;
+        position: relative;
+        z-index: 2;
+    }
+
+    @media screen and (max-width: 734px) {
+        .scratch-wrap {
+            width: 80%;
+        }
+
+        @media screen and (max-width: 507px) {
+            .scratch-wrap {
+                width: 80%;
+            }
+        }
+
+        @media screen and (max-width: 444px) {
+            .scratch-wrap {
+                width: 70%;
+                height: 8%;
+                top: 45%;
+            }
+        }
+    }
+
+
+
+
+
+
+    /* 
+    @media screen and (max-width: 414px) {
+        .scratch-wrap {
+            width: 70%;
+            height: 8%;
+            top: 50%;
+        }
+    }
+
+    @media screen and (max-width: 734px) {
+        .scratch-wrap {
+            width: 80%;
+        }
+    } */
+
+
+    .scratch-wrap canvas {
+        max-width: 100%;
+        width: 78.1%;
+        top: 6px;
+        height: 85%;
+        left: 64px;
+        position: absolute;
+        border-radius: 15px;
+        font-weight: bold;
+    }
+
+    @media screen and (max-width: 734px) {
+        .scratch-wrap canvas {
+            width: 77.7%;
+            height: 83.2%;
+            left: 11.2%;
+            font-size: 35px;
+        }
+
+        @media screen and (max-width: 507px) {
+            .scratch-wrap canvas {
+
+                width: 77.7%;
+                height: 83.2%;
+                left: 11.2%;
+                font-size: 35px;
+            }
+        }
+
+        @media screen and (max-width: 444px) {
+            .scratch-wrap canvas {
+                top: 5px;
+                width: 96.9%;
+                height: 84%;
+                left: 2%;
+                font-size: 35px;
+            }
+        }
+    }
+
+
+    /* 
+    @media screen and (max-width: 414px) {
+        .scratch-wrap canvas {
+            width: 98.65%;
+            left: 2px;
+            height: 8%;
+            font-size: 15px;
+            font-weight: bold;
+        }
+    }
+
+    @media screen and (max-width: 734px) {
+        .scratch-wrap canvas {
+            width: 78%;
+            height: 86%;
+            left: 11%;
+            font-size: 25px
+        }
+    }
+
+    @media screen and (min-width: 735px) {
+        .scratch-wrap canvas {
+            width: 78%;
+            height: 86%;
+            left: 11%;
+            font-size: 35px
+        }
+    } */
+
+
+    .scratch-wrap .scratch {
+        width: 100%;
+        height: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .chat-bubble {
+        max-width: 100%;
+        width: 80%;
+        height: 96%;
+        background-color: rgb(242 242 242);
+        color: rgb(124 124 124);
+        border-radius: 20px;
+        padding: 10px;
+        margin: 20px auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        border: 6px solid #d13c50;
+        line-height: 1.5;
+    }
+
+
+
+
+    @media screen and (max-width: 734px) {
+        .chat-bubble {
+            width: 80%;
+            height: 95.5%;
+        }
+
+        @media screen and (max-width: 507px) {
+            .chat-bubble {
+                width: 80%;
+                height: 95.5%;
+
+            }
+        }
+
+        @media screen and (max-width: 444px) {
+            .chat-bubble {
+                width: 100%;
+                height: 98.5%;
+            }
+        }
+    }
+
+
+
+    .scratch-wrap .message_chat {
+        font-family: Arial, Helvetica, sans-serif;
+        position: relative;
+        font-size: 35px;
+        border-radius: 5px;
+        letter-spacing: 15px;
+    }
+
+    @media screen and (max-width: 734px) {
+        .scratch-wrap .message_chat {
+            font-size: 29px;
+            left: 10px;
+        }
+
+        @media screen and (max-width: 507px) {
+            .scratch-wrap .message_chat {
+                font-size: 27px;
+                left: 10px;
+
+            }
+        }
+
+        @media screen and (max-width: 444px) {
+            .scratch-wrap .message_chat {
+                font-size: 18px;
+                left: 10px;
+                letter-spacing: 8px;
+
+            }
+        }
+    }
+
+    /* @media screen and (max-width: 414px) {
+        .scratch-wrap .message_chat {
+            font-size: 12px;
+            left: 10px;
+        }
+    }
+
+    @media screen and (max-width: 734px) {
+        .scratch-wrap .message_chat {
+            font-size: 29px;
+            left: 10px;
+        }
+    } */
+
+    .chat-bubble2 {
+        max-width: 60%;
+        width: 100%;
+        height: 40px;
+        color: rgb(222 186 167);
+        border-radius: 10px;
+        background-color: #e10045;
+        padding: 5px;
+        position: absolute;
+        top: 123%;
+        padding-top: 5px;
+        padding-bottom: 38px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 15px;
+        line-height: 1;
+        border: 1px solid #b1a3a3;
+    }
+
+    @media screen and (max-width: 734px) {
+        .chat-bubble2 {
+            top: 127%;
+            padding-bottom: 30px;
+            max-width: 70%;
+        }
+
+        @media screen and (max-width: 507px) {
+            .chat-bubble2 {
+                top: 127%;
+                max-width: 75%;
+
+            }
+        }
+
+        @media screen and (max-width: 444px) {
+            .chat-bubble2 {
+                top: 140%;
+                width: 100%;
+                font-size: 10px;
+                height: 30px;
+                line-height: 0.5;
+                max-width: 90%;
+            }
+        }
+    }
+
+
+    .message_chat2 input {
+        width: 100%;
+        height: 100%;
+        border: none;
+        background: #8f8c8c;
+        text-align: center;
+        padding: 5px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        border-radius: 5px;
+        letter-spacing: 2px;
+        /* Sesuaikan dengan lebar antar karakter yang diinginkan */
+
+        /* Styles for the placeholder text */
+
+    }
+
+    .message_chat2 input:focus {
+        box-shadow: 0 6px 5px rgba(255, 2, 2, 0.8);
+        /* Tambahkan efek bayangan saat input aktif */
+        border: none;
+        outline: none;
+        /* Hilangkan outline default untuk browser tertentu */
+    }
+
+
+    .scratch-wrap .message_chat2 input {
+        font-family: Arial, Helvetica, sans-serif;
+        position: relative;
+        font-size: 20px;
+        border-radius: 5px;
+        letter-spacing: 2px;
+        /* Sesuaikan dengan lebar antar karakter yang diinginkan */
+    }
+
+    .message_chat2 input::placeholder {
+        color: rgb(68, 65, 65);
+        /* Ubah warna placeholder menjadi putih */
+    }
+
+
+
+    @media screen and (max-width: 734px) {
+        .scratch-wrap .message_chat2 input {
+            font-size: 15px;
+            padding-bottom: 7px;
+        }
+
+        @media screen and (max-width: 444px) {
+            .scratch-wrap .message_chat2 input {
+                font-size: 12px;
+            }
+        }
+    }
+
+
+    .chat-bubble3 {
+        max-width: 26%;
+        max-width: 100%;
+        height: 27px;
+        background-color: rgb(225 0 69);
+        color: rgb(222 186 167);
+        border-radius: 10px;
+        padding: 10px;
+        position: absolute;
+        top: 147%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 11px;
+        line-height: 0.5;
+        border: 1px solid #b1a3a3;
+    }
+
+
+
+
+    @media screen and (max-width: 734px) {
+        .chat-bubble3 {
+            top: 147%;
+            height: 22px;
+        }
+
+        @media screen and (max-width: 507px) {
+            .chat-bubble3 {
+                top: 147%;
+            }
+        }
+
+        @media screen and (max-width: 444px) {
+            .chat-bubble3 {
+                width: 60%;
+                margin-top: 5px;
+                font-size: 10px;
+                height: 21px;
+                line-height: 0.2;
+                top: 164%
+            }
+        }
+    }
+
+    .scratch-wrap .message_chat3 {
+        font-family: Arial, Helvetica, sans-serif;
+        position: relative;
+        font-size: 11px;
+        border-radius: 5px;
+        letter-spacing: 2px;
+        /* Sesuaikan dengan lebar antar karakter yang diinginkan */
+    }
+
+
+    @media screen and (max-width: 734px) {
+        .scratch-wrap .message_chat3 {
+            font-size: 9px;
+        }
+
+        @media screen and (max-width: 414px) {
+            .scratch-wrap .message_chat3 {
+                font-size: 9px;
+                right: 2px;
+            }
+        }
+    }
+
+    .scratch .message:before,
+    .scratch .message:after {
+        top: 0;
+        width: 0;
+        height: 0;
+        left: 50%;
+        content: '';
+        margin-left: -8px;
+        position: absolute;
+        border: 8px solid transparent;
+    }
+
+    .scratch .message:before {
+        top: -17px;
+        border-bottom: 8px solid #ccc;
+    }
+
+    .scratch .message:after {
+        top: -15px;
+        border-bottom: 8px solid #fff;
+    }
+
+    #scratch {
+        cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABy0lEQVQ4T5XUTyiDYRwH8O/zvt63lotCISUhYS3/RUI0l8mFnBxobuYmrSUtJ5Ecxok1Jwe1CxIt/+aiRCx2cXGQsBTbmM32Tu9b79q/94/n/Hs+z+/3fHsegn8s05xtIxbjxrk4KDaHPrHNm3rTtxO1Ho9FfqNGg74HGo0G+64TxDju0WadLE82VIEi1tJYD11NBQghCEd+4dw9zEAVQRHTaetQWloChqZRkJcricqC6Zg4mhwqCUphcmg0Gj3LCpoX7WP+wJeDYVh0drSBYZis2SV3+hEIwrlziAyQx0DiDn1PO07PrxAKR9DW0qSIvry94+DYzaWAIjag74KutgrfP2GsbWwror43Hy6vb8AyOfYEmI6JMyqhT0/P8NzdC9jq/NSEAEphSmg6xtcTJUwKfX31pXQm1hHLsuO5t7O5uLVBq/gKxfH9wW+EQqHEmClPz7xkDw4Z+nKrK8sUQb7g8tYL584RKEKEO8v4HMxL61aWZWdHhw10UWG+LOrxPmDP5QbiZHxhxriZrVgIZXZlc4uiyIgcqgYTQhFPkUPVYimgVKf/wTLAZHSwv5v+9Afhcl/I3pmqH5sPCqCmKYryczHOIhVAtlD+AKIdKV3MKuX7AAAAAElFTkSuQmCC), auto
+    }
+
+    /* .coupon-create {
+color: #333;
+margin: auto;
+padding: 5px 8px;
+border-radius: 2px;
+text-decoration: none;
+display: inline-block;
+border: 2px solid #333;
+text-transform: uppercase;
+} */
+
+    .coupon-create:hover {
+        color: #fff;
+        background-color: #333;
+    }
+
+
+
+    .centr {
+        margin: 10px auto;
+    }
+
+    .m-btm {
+        text-align: center;
+        margin-bottom: 35px;
+    }
+
+    .mtn {
+        text-align: center;
+    }
+
+    .d-bl {
+        display: block;
+        margin-bottom: 35px;
+    }
+
+    #btnal {
+        background: #630606;
+        color: #fdfdfd;
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 18px;
+        padding: 12px;
+        cursor: pointer;
+        box-shadow: 0 3px 15px #dadada, 0 0 8px rgba(239, 243, 28, 0.979);
+        border: 1px solid white;
+        /* Atur warna dan opasitas sesuai kebutuhan Anda */
+    }
+
+
+
+    #btnal.vertical-shake {
+        animation: vertical-shaking 0.58s infinite;
+        font-size: 20px;
+        margin-top: 57px;
+    }
+
+    /* 
+    @media screen and (max-width: 414px) {
+
+        #btnal.vertical-shake {
+            font-size: 15px;
+            margin-top: 35px;
+            height: 20px;
+            line-height: 0.2;
+
+        }
+    } */
+
+
+
+    @media screen and (max-width: 734px) {
+        #btnal.vertical-shake {
+            height: 80%;
+            margin-top: 57px;
+            font-size: 15px;
+
+        }
+
+        @media screen and (max-width: 507px) {
+            #btnal.vertical-shake {
+                height: 80%;
+
+            }
+        }
+
+        @media screen and (max-width: 444px) {
+            #btnal.vertical-shake {
+                font-size: 15px;
+                margin-top: 61px;
+                height: 20px;
+                line-height: 0.2;
+
+            }
+        }
+    }
+
+    @keyframes vertical-shaking {
+        0% {
+            transform: translateY(0)
+        }
+
+        25% {
+            transform: translateY(5px)
+        }
+
+        50% {
+            transform: translateY(-5px)
+        }
+
+        70% {
+            transform: translateY(5px)
+        }
+
+        75% {
+            transform: translateX(0px)
+        }
+
+        100% {
+            transform: translateY(0)
+        }
+    }
+
+
+
+    .animated-image-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .animated-image {
+        animation: moveDown 3s linear infinite;
+        /* Ganti 5s dengan durasi animasi yang diinginkan */
+    }
+
+    @keyframes moveDown {
+        0% {
+            transform: translateY(50%);
+        }
+
+        100% {
+            transform: translateY(100%);
+        }
+    }
+
+
+    .animated-image-container2 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .animated-image2 {
+        animation: moveDown2 3s linear infinite;
+        /* Ganti 5s dengan durasi animasi yang diinginkan */
+    }
+
+    @keyframes moveDown2 {
+        0% {
+            transform: translateY(0%);
+        }
+
+        100% {
+            transform: translateY(50%);
+        }
+    }
+
+
+    .img-container3 {
+        position: absolute;
+        width: 105%;
+        top: -15px;
+        height: 100%;
+        right: 4px;
+        display: fixed;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .img-container4 {
+        position: absolute;
+        width: 70%;
+        top: 8%;
+        height: 100%;
+        right: 4px;
+        display: fixed;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @media screen and (max-width: 768px) {
+        .swal2-image {
+            left: 15% !important;
+        }
+    }
+
+    @media screen and (max-width: 310px) {
+        .swal2-image {
+            left: 7% !important;
+        }
+    }
+    
+
+    @media screen and (max-width: 734px) {
+        .img-container4 {
+            width: 70%;
+
+            top: 80px;
+        }
+
+        @media screen and (max-width: 507px) {
+            .img-container4 {
+                top: 45px;
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 444px) {
+            .img-container4 {
+                top: 45px;
+                width: 100%;
+            }
+        }
+    }
+
+    .zoom-move-image {
+        width: 50%;
+        animation: zoomAndMove 5s ease-in-out infinite;
+        /* Ganti 5s dengan durasi animasi yang diinginkan */
+    }
+
+    @keyframes zoomAndMove {
+
+        0%,
+        100% {
+            transform: scale(1) translate(0, 0);
+        }
+
+        50% {
+            transform: scale(1) translate(15px, 15px);
+        }
+    }
+
+    .swal2-image {
+        position: absolute;
+        top: -113px;
+        left: 26%;
+        filter: drop-shadow(0px 3px 3px #00000057);
+    }
+
+    .custom-swal-button {
+        background: linear-gradient(45deg, #3a010f, red) !important;
+        box-shadow: 0 5px 5px #0000005e !important;
+        transition: all 0.3s ease !important;
+    }
+
+    /* .swal2-icon.swal2-success.custom-swal-icon [class^=swal2-success-line] {
+        background-color: #ff0000 !important;
+        color: #ff00008a !important;
+    } */
+
+    div:where(.swal2-icon).swal2-error [class^=swal2-x-mark-line] {
+        background-color: #ff0000 !important;
+        color: #ff00008a !important;
+    }
+
+    .swal2-title {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        position: relative;
+        max-width: 100%;
+        margin: 0;
+        padding: 0.8em 1em 0;
+        color: #595959;
+        font-size: 1.875em;
+        font-weight: 600;
+        text-align: center;
+        text-transform: none;
+        word-wrap: break-word;
+        padding: 1px !important;
+    }
+
+    .swal2-html-container{
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .custom-swal-icon .swal2-success-ring {
+        border: 0.25em solid #ff00008a !important;
+    }
+
+    .swal2-icon.swal2-success.custom-swal-icon [class^=swal2-success-line] {
+        background-color: #ff0000 !important;
+        color: #ff00008a;
+    }
+
+    .swal2-icon {
+        margin: 1.5em auto 0.6em !important;
+    }
+
+    .custom-swal-button:hover {
+        box-shadow: 0 7px 7px #0000005e !important;
+        filter: brightness(1.5);
+        transform: scale(1.1);
+    }
