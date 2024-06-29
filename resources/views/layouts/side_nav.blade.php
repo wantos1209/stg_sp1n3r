@@ -315,19 +315,19 @@
                 </a>
             </div>
             <div class="sub_data_sidejsx">
-                <a href="#" id="Jenisvoucher">
+                <a href="/jenisvoucher" id="Jenisvoucher">
                     <div class="list_subdata">
                         <div class="dotsub"></div>
                         <span class="sub_title1">Setting</span>
                     </div>
                 </a>
-                <a href="#" id="Url_spin">
+                <a href="/urlspin/index" id="Url_spin">
                     <div class="list_subdata">
                         <div class="dotsub"></div>
                         <span class="sub_title1">URL</span>
                     </div>
                 </a>
-                <a href="#" id="Keterangan">
+                <a href="/keterangan" id="Keterangan">
                     <div class="list_subdata">
                         <div class="dotsub"></div>
                         <span class="sub_title1">Keterangan</span>
@@ -358,43 +358,43 @@
                 </a>
             </div>
             <div class="sub_data_sidejsx">
-                <a href="#" id="Urlevent">
+                <a href="/urlevent/index" id="Urlevent">
                     <div class="list_subdata">
                         <div class="dotsub"></div>
                         <span class="sub_title1">URL</span>
                     </div>
                 </a>
-                <a href="#" id="Hadiahevent">
+                <a href="/hadiah/index" id="Hadiahevent">
                     <div class="list_subdata">
                         <div class="dotsub"></div>
                         <span class="sub_title1">Hadiah</span>
                     </div>
                 </a>
-                <a href="#" id="Budgetevent">
+                <a href="/budget/index" id="Budgetevent">
                     <div class="list_subdata">
                         <div class="dotsub"></div>
                         <span class="sub_title1">Budget</span>
                     </div>
                 </a>
-                <a href="#" id="Gambarevent">
+                <a href="/gambar/index" id="Gambarevent">
                     <div class="list_subdata">
                         <div class="dotsub"></div>
                         <span class="sub_title1">Gambar</span>
                     </div>
                 </a>
-                <a href="#" id="ListPrizeevent">
+                <a href="/listprize/index" id="ListPrizeevent">
                     <div class="list_subdata">
                         <div class="dotsub"></div>
                         <span class="sub_title1">List Prize</span>
                     </div>
                 </a>
-                <a href="#" id="Contactevent">
+                <a href="/website/index" id="Contactevent">
                     <div class="list_subdata">
                         <div class="dotsub"></div>
                         <span class="sub_title1">Contact</span>
                     </div>
                 </a>
-                <a href="#" id="Buttonevent">
+                <a href="/buttonsetting/index" id="Buttonevent">
                     <div class="list_subdata">
                         <div class="dotsub"></div>
                         <span class="sub_title1">Button</span>
@@ -403,7 +403,7 @@
             </div>
 
             <div class="data_sidejsx">
-                <a href="#" id="Linksettings">
+                <a href="/linksettings" id="Linksettings">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24"
                         height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                         stroke-linecap="round" stroke-linejoin="round">
@@ -416,7 +416,7 @@
                     <span class="nav_title1">Link Settings</span>
                 </a>
             </div>
-            <div class="data_sidejsx">
+            {{-- <div class="data_sidejsx">
                 <a href="#" id="Allowedip">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-device-analytics"
                         width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
@@ -431,7 +431,7 @@
                     </svg>
                     <span class="nav_title1">Allowed IP</span>
                 </a>
-            </div>
+            </div> --}}
             <div class="data_sidejsx">
                 <a href="/user" id="Usermanagement">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-settings"

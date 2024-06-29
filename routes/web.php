@@ -1,14 +1,22 @@
 <?php
 
+use App\Http\Controllers\BudgetController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\GambarController;
 use App\Http\Controllers\GenerateVoucherController;
+use App\Http\Controllers\HadiahController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UrlSpinController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VoucherController;
 use App\Http\Controllers\PemiluController;
 use App\Http\Controllers\ImlekController;
+use App\Http\Controllers\JenisvoucherController;
+use App\Http\Controllers\KeteranganController;
+use App\Http\Controllers\ListPrizeController;
 use App\Http\Controllers\NewYearController;
+use App\Http\Controllers\UrlEventController;
+use App\Http\Controllers\WebsiteController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -118,6 +126,83 @@ Route::middleware(['isAdmin'])->group(function () {
     Route::post('/user/update', [UserController::class, 'update']);
     Route::delete('/user/delete', [UserController::class, 'destroy']);
     Route::get('/user/view/{id}', [UserController::class, 'views']);
+
+    /*--  Jenis Voucher --*/
+    Route::get('/jenisvoucher', [JenisvoucherController::class, 'index']);
+    Route::get('/jenisvoucher/add', [JenisvoucherController::class, 'create']);
+    Route::get('/jenisvoucher/edit/{id}', [JenisvoucherController::class, 'edit']);
+    Route::post('/jenisvoucher/store', [JenisvoucherController::class, 'store']);
+    Route::post('/jenisvoucher/update', [JenisvoucherController::class, 'update']);
+    Route::delete('/jenisvoucher/delete', [JenisvoucherController::class, 'destroy']);
+    Route::get('/jenisvoucher/view/{id}', [JenisvoucherController::class, 'views']);
+
+    //URL SPIN
+    Route::get('/urlspin/index/', [UrlSpinController::class, 'index']);
+    Route::get('/urlspin/edit/{id}', [UrlSpinController::class, 'edit']);
+    Route::get('/urlspin/view/{id}', [UrlSpinController::class, 'view']);
+    Route::post('/urlspin/update/{id}', [UrlSpinController::class, 'update']);
+    Route::get('/getDataUrl', [UrlSpinController::class, 'getDataUrl']);
+    Route::post('/event/updateurl_spinner/{website}/{id}', [EventController::class, 'updateurl_spinner']);
+
+    /*--  Keterangan --*/
+    Route::get('/keterangan', [KeteranganController::class, 'index']);
+    Route::get('/keterangan/add', [KeteranganController::class, 'create']);
+    Route::get('/keterangan/edit/{id}', [KeteranganController::class, 'edit']);
+    Route::post('/keterangan/store', [KeteranganController::class, 'store']);
+    Route::post('/keterangan/update', [KeteranganController::class, 'update']);
+    Route::delete('/keterangan/delete', [KeteranganController::class, 'destroy']);
+    Route::get('/keterangan/view/{id}', [KeteranganController::class, 'views']);
+
+    /* URL Event */
+    Route::get('/urlevent/index/', [UrlEventController::class, 'index']);
+    Route::get('/urlevent/edit/{id}', [UrlEventController::class, 'edit']);
+    Route::get('/urlevent/view/{id}', [UrlEventController::class, 'vew']);
+    Route::post('/urlevent/update', [UrlEventController::class, 'update']);
+
+    /* Hadiah */
+    Route::get('/hadiah/index/', [HadiahController::class, 'index']);
+    Route::get('/hadiah/add/', [HadiahController::class, 'create']);
+    Route::post('/hadiah/store/', [HadiahController::class, 'store']);
+    Route::get('/hadiah/edit/{id}', [HadiahController::class, 'edit']);
+    Route::get('/hadiah/view/{id}', [HadiahController::class, 'view']);
+    Route::post('/hadiah/update/', [HadiahController::class, 'update']);
+    Route::delete('/hadiah/delete/', [HadiahController::class, 'destroy']);
+
+    /* Budget */
+    Route::get('/budget/index/', [BudgetController::class, 'index']);
+    Route::get('/budget/add/', [BudgetController::class, 'create']);
+    Route::post('/budget/store/', [BudgetController::class, 'store']);
+    Route::get('/budget/edit/{id}', [BudgetController::class, 'edit']);
+    Route::get('/budget/view/{id}', [BudgetController::class, 'view']);
+    Route::post('/budget/update/', [BudgetController::class, 'update']);
+    Route::delete('/budget/delete/', [BudgetController::class, 'destroy']);
+
+    /* Gambar */
+    Route::get('/gambar/index/', [GambarController::class, 'index']);
+    Route::get('/gambar/add/', [GambarController::class, 'create']);
+    Route::post('/gambar/store/', [GambarController::class, 'store']);
+    Route::get('/gambar/edit/{id}', [GambarController::class, 'edit']);
+    Route::get('/gambar/view/{id}', [GambarController::class, 'view']);
+    Route::post('/gambar/update/', [GambarController::class, 'update']);
+    Route::delete('/gambar/delete/', [GambarController::class, 'destroy']);
+
+    /* listprize */
+    Route::get('/listprize/index/', [ListPrizeController::class, 'index']);
+    Route::get('/listprize/add/', [ListPrizeController::class, 'create']);
+    Route::post('/listprize/store/', [ListPrizeController::class, 'store']);
+    Route::get('/listprize/edit/{id}', [ListPrizeController::class, 'edit']);
+    Route::get('/listprize/view/{id}', [ListPrizeController::class, 'view']);
+    Route::post('/listprize/update/', [ListPrizeController::class, 'update']);
+    Route::delete('/listprize/delete/', [ListPrizeController::class, 'destroy']);
+
+    /* website */
+    Route::get('/website/index/', [WebsiteController::class, 'index']);
+    Route::get('/website/add/', [WebsiteController::class, 'create']);
+    Route::post('/website/store/', [WebsiteController::class, 'store']);
+    Route::get('/website/edit/{id}', [WebsiteController::class, 'edit']);
+    Route::get('/website/view/{id}', [WebsiteController::class, 'view']);
+    Route::post('/website/update/', [WebsiteController::class, 'update']);
+    Route::delete('/website/delete/', [WebsiteController::class, 'destroy']);
 });
 
 

@@ -68,9 +68,9 @@ class UrlSpinController extends Controller
                 'url' => $request->url[0]
             ]);
 
-            return response()->json(['success' => true], 200);
+            return redirect('/urlspin/index')->with('success', 'Data berhasil diupdate!');
         } catch (\Exception $e) {
-            return response()->json(['error' => $e->getMessage()], 400);
+            return redirect()->back()->withErrors(['error' => $e->getMessage()])->withInput();
         }
     }
 

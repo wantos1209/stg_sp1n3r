@@ -20,6 +20,9 @@ class MainSeeder extends Seeder
             WebsiteSeeder::class,
             HadiahSeeder::class,
             SpinnerJenisVoucherSeeder::class,
+            BonusUrlSeeder::class,
+            BudgethadiahSeeder::class,
+            FloatingimageSeeder::class
         ]);
     }
 }
